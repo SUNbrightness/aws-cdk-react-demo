@@ -15,7 +15,6 @@
     "typescript": "~5.1.6"
   },
   "dependencies": {
-    "@aws-sdk/credential-providers": "^3.385.0",
     "@types/aws-lambda": "^8.10.119",
     "aws-sdk": "*",
     "nanoid": "^4.0.2"

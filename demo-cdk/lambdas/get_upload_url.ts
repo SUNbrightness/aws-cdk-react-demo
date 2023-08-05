@@ -1,8 +1,6 @@
 import { APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda';
 
 import * as AWS from 'aws-sdk';
-import {Handler} from "aws-cdk-lib/aws-lambda";
-const { getSignedUrl } = require("@aws-sdk/s3-request-presigner");
 
 const s3 = new AWS.S3();
 const responseData={headers: {

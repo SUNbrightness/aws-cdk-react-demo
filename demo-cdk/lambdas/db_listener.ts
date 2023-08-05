@@ -1,6 +1,5 @@
 import * as AWS from 'aws-sdk';
-import {Handler} from "aws-cdk-lib/aws-lambda";
-import {DynamoDBRecord, DynamoDBStreamEvent} from "aws-lambda";
+import {DynamoDBRecord, DynamoDBStreamEvent, Handler} from "aws-lambda";
 
 const TABLE_NAME = process.env.TABLE_NAME || '';
 const PRIMARY_KEY = process.env.PRIMARY_KEY || '';

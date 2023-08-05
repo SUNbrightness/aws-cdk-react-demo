@@ -1,6 +1,5 @@
 import * as AWS from 'aws-sdk';
-import {Handler} from "aws-cdk-lib/aws-lambda";
-import { APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda';
+import {APIGatewayProxyEvent, APIGatewayProxyResult, Handler} from 'aws-lambda';
 
 const { nanoid } = require('nanoid');
 
