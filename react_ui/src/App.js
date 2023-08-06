@@ -24,16 +24,21 @@ function App() {
         //get upload url
         const axiosResponse = await  axios.get(api_gateway+'getUploadUrl?key='+s3Key,);
         let uploadUrl = axiosResponse['data']['url'];
+        let bucketName = axiosResponse['data']['bucketName'];
 
         //upload to s3
-        const formData = new FormData()
-        formData.append('file', file);
-        await axios.put(uploadUrl,formData);
+        let res = await axios.put(uploadUrl,file);
+        if(res['status']!==200){
+            throw new Error('upload error');
+        }
 
         //send  form
-        await axios.post(api_gateway+'file', { input_text: inputText,input_file_path:s3Key});
-
+        res = await axios.post(api_gateway+'file', { input_text: inputText,input_file_path:bucketName+'/'+s3Key});
+        if(res['status']!==200){
+            throw new Error('upload error');
+        }
         alert('提交成功');
+        window.location.reload();
     };
 
   return (

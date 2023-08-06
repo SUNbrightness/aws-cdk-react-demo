@@ -20,6 +20,9 @@ export class DeploymentService extends Construct {
             removalPolicy: RemovalPolicy.DESTROY,
         });
 
+
+
+
         const distribution = new Distribution(this, 'CloudfrontDistribution', {
             defaultBehavior: {
                 origin: new S3Origin(hostingBucket),

@@ -30,7 +30,8 @@ export const handler = async (event: APIGatewayProxyEvent): Promise<APIGatewayPr
         statusCode: 200,
         body: JSON.stringify(
             {
-                url,
+                url:url,
+                bucketName:BUCKET_NAME
             },
             null,
             2,

@@ -6,7 +6,6 @@ import {CfnOutput, RemovalPolicy} from 'aws-cdk-lib';
 import {NodejsFunction, NodejsFunctionProps} from 'aws-cdk-lib/aws-lambda-nodejs';
 import {join} from 'path'
 import * as s3 from "aws-cdk-lib/aws-s3";
-import * as iam from "aws-cdk-lib/aws-iam";
 import {Bucket} from "aws-cdk-lib/aws-s3";
 
 const lambda = require("aws-cdk-lib/aws-lambda");
@@ -28,7 +27,7 @@ export class ApiService extends Construct {
             environment: {
                 PRIMARY_KEY: primaryKey,
                 TABLE_NAME: this.fileTable.tableName,
-                BUCKET_NAME:this.dataBucket.bucketName
+                BUCKET_NAME:this.dataBucket.bucketName,
             },
             runtime: Runtime.NODEJS_18_X,
         }
