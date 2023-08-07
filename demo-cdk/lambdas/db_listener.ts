@@ -35,8 +35,8 @@ python3 vm_process.py ${REGION_NAME} ${fileId};
         ImageId: "ami-02ca3c305687c64bb",
         // free type.
         InstanceType: "t3.micro",
-        KeyName:'i7_13700k',
-        SecurityGroupIds: ['sg-0e2ea4386e45b8e56'],
+        // KeyName:'i7_13700k',
+        // SecurityGroupIds: ['sg-0e2ea4386e45b8e56'],
         // Ensure only 1 instance launches.
         MinCount: 1,
         MaxCount: 1,
